@@ -10,6 +10,7 @@ import { FormSkuExplicitValidationComponent } from './form-sku-explicit-validati
 import { FormSkuShorthandValidationComponent } from './form-sku-shorthand-validation/form-sku-shorthand-validation.component';
 import { FormSkuCustomValidationComponent } from './form-sku-custom-validation/form-sku-custom-validation.component';
 import { FormSkuEventsComponent } from './form-sku-events/form-sku-events.component';
+import { FormModelComponent } from './form-model/form-model.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FormSkuEventsComponent } from './form-sku-events/form-sku-events.compon
     FormSkuExplicitValidationComponent,
     FormSkuShorthandValidationComponent,
     FormSkuCustomValidationComponent,
-    FormSkuEventsComponent
+    FormSkuEventsComponent,
+    FormModelComponent
   ],
   imports: [
     BrowserModule,
