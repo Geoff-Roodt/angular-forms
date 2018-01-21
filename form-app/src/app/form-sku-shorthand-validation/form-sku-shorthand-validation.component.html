@@ -5,7 +5,7 @@
     class="ui form"
     [class.error]="!myForm.valid && myForm.touched">
 
-    <div class="field" [class.error]="!sku.valid && sku.touched">
+    <div class="field" [class.error]="!myForm.get('sku').valid && myForm.get('sku').touched">
       <label for="skuInput">SKU</label>
       <input type="text" id="skuInput" placeholder="SKU" [formControl]="myForm.controls['sku']">
       <div *ngIf="!myForm.controls['sku'].valid" class="ui error message">SKU is invalid</div>
