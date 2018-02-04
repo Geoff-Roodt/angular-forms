@@ -2,17 +2,21 @@
   <h2 class="ui header">Demo Form: ng-Model (2 Way Binding)</h2>
 
   <div class="ui info message">
+    <!-- Leverage template tag to print the component variable -->
     The product name is: {{productName}}
   </div>
 
+  <!-- print a form and bind the form name and submite action event using Angular's built in handler -->
   <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="ui form">
     <div class="field">
       <label for="productNameInput">Product Name</label>
+      <!-- print the name input and bind the product name using Angular's directives -->
       <input type="text" id="productNameInput" placeholder="Product Name" [formControl]="myForm.get('productName')" [(ngModel)]="productName">
     </div>
 
+    <!-- This div will only be displayed if the form is invalid. Angular's attribute will assert the form's property and return a boolean value -->
     <div *ngIf="!myForm.valid" class="ui error message">Form is invalid</div>
     <button type="submit" class="ui button">Submit</button>
   </form>
-  
+
 </div>

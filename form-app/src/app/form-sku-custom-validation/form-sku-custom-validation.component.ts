@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators, AbstractControl, FormControl} from '@angular/forms';
 
+// Declare our custom validation function; the input must start with 123 to be valid
 function skuValidator(control: FormControl): { [s: string]: boolean } {
   if (!control.value.match(/^123/)) {
     return {invalidSku: true};
@@ -18,10 +19,15 @@ export class FormSkuCustomValidationComponent implements OnInit {
   sku: AbstractControl;
 
   constructor(fb: FormBuilder) {
+
+    // Attach our custom validation to the form.
+    // Here we specify that the input is required and must pass our custom validation defined above
     this.myForm = fb.group({
       'sku':  ['', Validators.compose([
         Validators.required, skuValidator])]
     });
+
+    // Associate the form control to our local variable
     this.sku = this.myForm.controls['sku'];
   }
 

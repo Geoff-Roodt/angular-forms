@@ -5,11 +5,15 @@
         class="ui form"
         [class.error]="!myForm.valid && myForm.touched">
 
+    <!-- Attach the Error class attribute to this div if the SKU is invalid && modified-->
     <div class="field" [class.error]="!sku.valid && sku.touched">
       <label for="skuInput">SKU</label>
       <input type="text" id="skuInput" placeholder="SKU" [formControl]="sku">
+
+      <!-- If there is an error display the divs, using Angular's syntax -->
       <div *ngIf="sku.hasError('invalidSku')" class="ui error message">SKU must begin with <span>123</span></div>
       <div *ngIf="sku.hasError('required')" class="ui error message">SKU is required</div>
+      
     </div>
 
     <div *ngIf="!myForm.valid" class="ui error message">Form is invalid</div>

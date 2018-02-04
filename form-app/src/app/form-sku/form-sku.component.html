@@ -1,12 +1,17 @@
 <div class="ui raised segment">
   <h2 class="ui haeder">Demo Form: Sku</h2>
+
+  <!-- Print a form, setting the form name using Angular's short-hand assignment. Hook up the Submit event to Angular's form submit action -->
   <form #f="ngForm"
     (ngSubmit)="onSubmit(f.value)"
     class="ui form">
 
     <div class="field">
       <label for="skuInput">SKU</label>
+
+      <!-- Using Angular's ngModel attribute we bind the input to the skuIput property on OUR model -->
       <input type="text" id="skuInput" placeholder="SKU" name="sku" ngModel>
+      
     </div>
 
     <button type="submit" class="ui button">Submit</button>

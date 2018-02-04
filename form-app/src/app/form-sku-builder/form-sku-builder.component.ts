@@ -10,6 +10,8 @@ export class FormSkuBuilderComponent implements OnInit {
   myForm: FormGroup;
 
   constructor(fb:FormBuilder) {
+    
+    // Set the default SKU form property to ABC123
     this.myForm = fb.group({
       'sku':['ABC123']
     });
